@@ -1,0 +1,50 @@
+<?php
+    // code source de connexion.php
+    $host = "localhost";
+    $user_mysql = "root";    // nom de l'utilisateur MySQL 
+    $password_mysql = "";    // mot de passe de l'utilisateur MySQL
+    $database = "zds_injections_sql";
+
+    $db = mysqli_connect($host, $user_mysql, $password_mysql, $database);
+
+    if(!$db)
+    {
+        echo "Echec de la connexion\n";
+        exit();
+    }
+
+    mysqli_set_charset($db, "utf8");
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Formulaire Authentification
+</title>
+</head>
+<body>
+<h1> <bold>Formulaire d'authentification, injection simple </bold></h1>
+
+<table>
+	<tr>
+		<td><td><h3>Connexion</h3></td></td>
+	</tr>
+	<tr>
+		<td> Nom d'utilisateur </td>
+	</tr>
+	<tr>
+		<td> <input type="Text" placeholder="Entrer votre nom d'utilisateur" name="username" required> </td>
+	</tr>
+	<tr>
+		<td> Mot de passe </td>
+	</tr>
+	<tr>
+		<td> <input type="Password" placeholder="Entrer votre mot de passe" name="password" required> </td>
+	</tr>
+	<tr>
+		<td> <td> <input type="Submit" id='submit' value='LOGIN'> </td></td>
+	</tr>
+</table>
+</body>
+</html>
